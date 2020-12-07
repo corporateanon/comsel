@@ -2,13 +2,17 @@ type Slice<ST, SL extends keyof ST> = ST[SL];
 type Selector<ST, R = any> = (state: ST) => R;
 type SelectorsMap<ST> = Record<string, Selector<ST>>;
 type BoundSelectorsMap<SM extends SelectorsMap<any>, ST> = {
-    [S in keyof SM]: Selector<ST, ReturnType<SM[S]>>;
+    [SEL in keyof SM]: Selector<ST, ReturnType<SM[SEL]>>;
 };
+
 type SelectorsSliceMap<ST> = {
-    [SL in keyof ST]: SelectorsMap<Slice<ST, SL>>;
+    [SL in keyof Partial<ST>]: SelectorsMap<Slice<ST, SL>>;
 };
-type BoundSelectorsSliceMap<SSM extends SelectorsSliceMap<ST>, ST> = {
-    [SL in keyof ST]: BoundSelectorsMap<SSM[SL], ST>;
+type BoundSelectorsSliceMap<
+    SSM extends SelectorsSliceMap<ST>,
+    ST extends Record<string, any>
+> = {
+    [SL in keyof SSM]: BoundSelectorsMap<SSM[SL], ST>;
 };
 
 const bindSelectorToSlice = <

@@ -38,11 +38,13 @@ const ssMap = {
     todo: {
         selectFirstTodo,
     },
-    // users: {
-    //     selectFirstUser,
-    // },
+    users: {
+        selectFirstUser,
+    },
+    asd: { selectFirstUser },
 };
 
 const combibedSelectors = combineSelectors<State, typeof ssMap>(ssMap);
 
 combibedSelectors.todo.selectFirstTodo(state)?.isComplete;
+let a = combibedSelectors.asd.selectFirstUser(state);
