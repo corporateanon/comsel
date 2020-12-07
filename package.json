@@ -4,7 +4,12 @@
     "description": "",
     "license": "ISC",
     "author": "",
-    "main": "index.js",
+    "main": "./lib/createSelectors.js",
+    "types": "./lib/createSelectors.d.ts",
+    "files": [
+        "lib",
+        "src"
+    ],
     "scripts": {
         "build": "npm run build:types && npm run build:js",
         "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
