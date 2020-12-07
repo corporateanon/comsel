@@ -3,7 +3,20 @@
     "version": "0.0.3",
     "description": "",
     "license": "ISC",
-    "author": "",
+    "author": {
+        "name": "corporateanon",
+        "url": "https://github.com/corporateanon"
+    },
+    "contributors": [
+        {
+            "name": "corporateanon",
+            "url": "https://github.com/corporateanon"
+        },
+        {
+            "name": "andrienko",
+            "url": "https://github.com/andrienko"
+        }
+    ],
     "main": "./lib/createSelectors.js",
     "types": "./lib/createSelectors.d.ts",
     "files": [
