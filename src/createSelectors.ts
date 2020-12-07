@@ -12,7 +12,9 @@ type BoundSelectorsSliceMap<
     SSM extends SelectorsSliceMap<ST>,
     ST extends Record<string, any>
 > = {
-    [SL in keyof SSM]: BoundSelectorsMap<SSM[SL], ST>;
+    [SL in keyof SSM]: SL extends keyof ST
+        ? BoundSelectorsMap<SSM[SL], ST>
+        : never;
 };
 
 const bindSelectorToSlice = <
