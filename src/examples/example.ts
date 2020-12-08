@@ -37,9 +37,9 @@ const ssMap = {
     },
 };
 
-const combibedSelectors = combineSelectors<State, typeof ssMap>(ssMap);
+const combinedSelectors = combineSelectors<State, typeof ssMap>(ssMap);
 
 //--------
 
 const state = ({} as unknown) as State;
-combibedSelectors.todo.selectFirstTodo(state)?.isComplete;
+combinedSelectors.todo.selectFirstTodo(state)?.isComplete;

@@ -59,7 +59,7 @@ const selectorsMap = {
         selectFirstUser,
     },
 };
-const combibedSelectors = combineSelectors<State, typeof selectorsMap>(
+const combinedSelectors = combineSelectors<State, typeof selectorsMap>(
     selectorsMap
 );
 ```
@@ -68,6 +68,6 @@ Now you can use the selectors like the following:
 
 ```typescript
 // Assuming there is a `state: State` variable
-combibedSelectors.todo.selectFirstTodo(state); // => Todo|undefined
-combibedSelectors.users.selectFirstUser(state); // => User|undefined
+combinedSelectors.todo.selectFirstTodo(state); // => Todo|undefined
+combinedSelectors.users.selectFirstUser(state); // => User|undefined
 ```
